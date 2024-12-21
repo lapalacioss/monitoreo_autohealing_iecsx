@@ -1,0 +1,28 @@
+172.17.208.83 mtypagpap12 
+172.17.208.92 mtypagpap19
+
+curl -f -H 'Content-Type: application/json' -XPOST --user ***:** \-d '{"extra_vars":{"managed_hosts_survey":"172.16.4.233"}}' https://ansible.liverpool.com.mx/api/v2/job_templates/537/launch/ --insecure
+
+
+ss -tulnp | grep wildfly
+ss -tulnp | grep -E '70304|69616'
+
+23: 10990,9080,9443,
+18: 8443,9090,9990,3528
+
+
+/usr/local/nagios/libexec/wildfly-restart.sh $HOSTNAME$ 
+$SERVICEDESC$ $SERVICESTATE$ $HOSTSTATE$ $HOSTADDRESS$ $SERVICESTATETYPE$
+
+
+hostname = nombre del host (ejem: "appv-0004", "appv-0074", etc)
+servicedesc = nombre del servicio (ejem: "wildfly18", "wildfly23", etc)
+servicestate = estado del servicio (ejem: "Critical", "OK", "Unkown", "Warning")
+hoststate = estado del host (ejem: "UP", "DOWN", "UNREACHABLE")
+hostaddress = ip del host (ejem: "172.17.211.108", "172.17.211.109", etc)
+servicestatetype = estado del tipo de servicio (ejem: "Hard", "Soft")
+
+
+tail -10f /usr/local/nagios/var/nagios_event_handler.log
+
+cd /usr/local/nagios/libexec/eventhandlers/  -> wildfly-restart.sh
