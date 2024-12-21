@@ -31,5 +31,3 @@ else
     echo $timestamp "El estado del servicio ($SERVICENAME) no es CRITICAL. No se ejecuta el script." >> $LOGFILE
 fi
 
-# /usr/local/nagios/libexec/icexs-restart.sh $HOSTNAME$  $SERVICEDESC$ $SERVICESTATE$ $HOSTSTATE$ $HOSTADDRESS$ $SERVICESTATETYPE$
-# /usr/local/nagios/libexec/wildfly-restart.sh $HOSTNAME$  $SERVICEDESC$ $SERVICESTATE$ $HOSTSTATE$ $HOSTADDRESS$ $SERVICESTATETYPE$
